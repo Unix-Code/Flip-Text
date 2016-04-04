@@ -7,14 +7,14 @@ package fliptext;
 public class FlipText {
     
     public String flip (String sText) {
-        String flippedAlphabet = "ɐqɔpǝɟƃɥıɾʞןɯuodbɹsʇnʌʍxʎz";
-        String text = sText.toLowerCase();
+        String lowerCaseFlippedAlphabet = "ɐqɔpǝɟƃɥıɾʞןɯuodbɹsʇnʌʍxʎz";
+        String upperCaseFlippedAlphabet = "∀qƆpƎℲפHIſʞ˥WNOԀQɹS⊥∩ΛMXλZ";
         String newText = "";
         
-        for (int i = 0; i < text.length(); i++) {
-            char letter = text.charAt(i);
+        for (int i = 0; i < sText.length(); i++) {
+            char letter = sText.charAt(i);
             if (Character.isLetter(letter)) {
-                newText += flippedAlphabet.charAt((int)letter - (int)'a');
+                newText += (Character.isUpperCase(letter)) ? upperCaseFlippedAlphabet.charAt((int)letter - (int)'A') : lowerCaseFlippedAlphabet.charAt((int)letter - (int)'a');
             }
             else {
                 newText += letter;
